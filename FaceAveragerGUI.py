@@ -26,9 +26,9 @@ class Averager():
         face1 = detector.detectMultiScale(gi1, 1.1, 5);
         face2 = detector.detectMultiScale(gi2, 1.1, 5);
         if len(face1) == 0 or len(face2) == 0:
-            raise "Fuck This BullShit!"
+            raise "No Faces Have been Found."
         
-        print(f"{len(face1)} and {len(face2)}")
+        #print(f" Number of faces found were : {len(face1)} and {len(face2)}")
         (x1, y1, X1, Y1) = face1[0];
         (x2, y2, X2, Y2) = face2[0];
         #gi1 = gi1[x1+y1:X1-Y1]
