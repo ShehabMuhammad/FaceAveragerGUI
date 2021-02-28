@@ -13,8 +13,8 @@ class Averager():
         self.button1 = tk.Button(self.root, text="save the image.", command=self.Merge).pack()
         self.button2 = tk.Button(self.root, text="Add a face.", command=self.add).pack()
         self.label = tk.Label(self.root, text="Please choose two frontal face images, With no swayings").pack(side="bottom")
-        self.width = 200;
-        self.height = 200;
+        self.width = 240;
+        self.height = 320;
         self.faceSpace = np.empty([self.width, self.height, 3])
     def add(self, face):
         gi1 = cv2.imread(askopenfilename());
@@ -25,9 +25,9 @@ class Averager():
         if len(face1) == 0 or len(face2) == 0:
             raise "No Faces Have been Found."
         
-        #print(f" Number of faces found were : {len(face1)} and {len(face2)}")
+        print(f" Number of faces found were : {len(face1)} and {len(face2)}")
         (x1, y1, X1, Y1) = face1[0];
-        #gi1 = gi1[x1+y1:X1-Y1]
+        gi1 = gi1[x1+y1:X1-Y1]
         #gi2 = gi2[x2+y2:X2-Y2]            
         gi1 = cv2.resize(gi1, (self.width, self.height), 3);
     
